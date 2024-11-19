@@ -1,0 +1,5 @@
+MONEYLOG_FILE=/caminho/moneylog.html
+SENDER_EMAIL=seu.email@gmail.com
+RECEIVER_EMAIL=seu.email@gmail.com
+EMAIL_PASSWORD='sua senha do servico gmail'
+TIMEZONE=America/Sao_Paulo
