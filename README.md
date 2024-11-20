@@ -1,27 +1,46 @@
-# moneylog.py
+# **Moneylog.py: Gerenciamento Financeiro Automatizado**
 
-portfolio script Python
+Este script em Python automatiza o gerenciamento financeiro pessoal, processando informações extraídas de um arquivo `moneylog.html`. Ele organiza datas de vencimento em ordem crescente para o dia atual e o seguinte, identificando finais de semana e feriados do mês atual e do próximo. A solução permite planejamento financeiro antecipado e seguro, gerando relatórios estruturados enviados diretamente para o e-mail.
 
-Este script em Python automatiza o gerenciamento financeiro ao processar informações extraídas de um arquivo moneylog.html, um aplicativo gratuito e multiplataforma disponível em https://aurelio.net/moneylog/portable/#download. O script organiza datas de vencimento em ordem crescente para o dia atual e o seguinte, identificando também finais de semana e feriados do mês atual e do próximo, permitindo planejamento financeiro antecipado e seguro, gerando um relatório estruturado, enviado por e-mail.
+## **Requisitos**
+1. **Moneylog**: Baixe o [Moneylog](https://aurelio.net/moneylog/portable/#download) e renomeie o arquivo para `moneylog.html`.
+2. **Python 3**: Certifique-se de ter Python 3 instalado no seu sistema.
+3. **Senha de app do Gmail**: Gere sua senha no [painel de configurações do Google](https://myaccount.google.com/apppasswords?rapt=AEjHL4MN0wbhEPXDK7Pc4634UNf81SV0GGdj1-Bzq0aZ1h4XOQ-SM7KVUCjf2BSPiXnxUpRjdwaPvnDkn9L4fXjdU9D9ImM40YV9fmnzSPdCEkQyUqBC6gM) e insira-a no arquivo `.env`.
 
-As senhas de app do Gmail devem ser conseguidas neste link: https://myaccount.google.com/apppasswords?rapt=AEjHL4MN0wbhEPXDK7Pc4634UNf81SV0GGdj1-Bzq0aZ1h4XOQ-SM7KVUCjf2BSPiXnxUpRjdwaPvnDkn9L4fXjdU9D9ImM40YV9fmnzSPdCEkQyUqBC6gM
+## **Instruções de Uso**
+1. **Prepare o Arquivo `moneylog.html`**:
+   - Faça lançamentos financeiros, separando cada coluna por um TAB.
+   - Exemplo de lançamentos:
+     ```plaintext
+      2024-11-18;-100,00;categoria1,categoria2;|;(--);xxxx xxxxxxx-x;descrição da despesa ou da receita
+      2024-11-19;-500,00;categoria1,categoria2;|;(--);xxxx xxxxxxx-x;descrição da despesa ou da receita
+      2024-11-15;-210,00;categoria1,categoria2;|;(--);xxxx xxxxxxx-x;descrição da despesa ou da receita
+      2024-11-25;+100,00;categoria1,categoria2;|;(--);xxxx xxxxxxx-x;descrição da despesa ou da receita
+     ```
+   - Dica: Substitua os separadores `;` por TABs reais no seu teclado.
 
-INSTRUÇÕES DE USO:
+2. **Configuração do Arquivo `.env`**:
+   - Crie o arquivo `.env` na mesma pasta do script.
+   - Adicione a senha gerada no Gmail ao arquivo `.env`, no formato:
+     ```plaintext
+     EMAIL_PASSWORD='sua_senha_de_app_aqui'
+     ```
 
-- Baixe o moneylog no link https://aurelio.net/moneylog/portable/
-- Renomeie-o para simplesmente moneylog.html
-- faça seus lançamentos separando cada coluna por um TAB.
-  
-- Ex.: cole em seu moneylog.html estes lançamentos abaixo e substitua <TAB> por um TAB real de seu teclado. Coloque as datas do dia e do dia seguinte, antes de experimentar rodar o script. O script roda da mesma forma para um arquivo moneylog.txt com apenas os lançamentos, fazendo pequena alteração para que o mesmo encontre o arquivo .txt. Funciona muito bem para quem é minimalista e quer experimentar guardar seus registros contábeis num arquivo de texto puro.
-  
-- 2024-11-18<TAB>-100,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
-- 2024-11-19<TAB>-500,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
-- 2024-11-15<TAB>-210,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
-- 2024-11-25<TAB>+100,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
-- 2024-11-23<TAB>+800,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
-- 2024-12-23<TAB>+800,00<TAB>categoria1,categoria2<TAB>|<TAB>(--)<TAB>xxxx xxxxxxx-x<TAB>descrição da despesa ou da receita
+3. **Execução do Script**:
+   - Certifique-se de que os arquivos `moneylog.py`, `moneylog.html` e `.env` estão na mesma pasta.
+   - Execute o script:
+     ```bash
+     python3 moneylog.py
+     ```
+   - No MacOS e Linux, use `python3`. No Windows, pode ser `python`.
 
-- Crie uma senha de app no gmail https://myaccount.google.com/apppasswords?rapt=AEjHL4MN0wbhEPXDK7Pc4634UNf81SV0GGdj1-Bzq0aZ1h4XOQ-SM7KVUCjf2BSPiXnxUpRjdwaPvnDkn9L4fXjdU9D9ImM40YV9fmnzSPdCEkQyUqBC6gM
-- Coloque a senha dentro do arquivo .env
-- Estando os três arquivos dentro da mesma pasta: moneylog.py, moneylog.html e .env, basta rodar o script moneylog.py (No Mac OS é python3 moneylog.py
-- Se tudo estiver correto, você verá a execução no Terminal e receberá na sua conta gmail, o seu primeiro relatório contendo o resultado da execução do script.
+4. **Resultados**:
+   - A execução será exibida no terminal.
+   - O relatório será enviado automaticamente para o e-mail configurado no `.env`.
+
+## **Personalização**
+- Para usuários minimalistas, o script também suporta arquivos de texto simples (`moneylog.txt`), exigindo apenas ajustes menores no código.
+- Fique à vontade para adaptar o script às suas necessidades!
+
+## **Contribuição**
+Sinta-se livre para contribuir com melhorias, sugerir funcionalidades ou relatar problemas no repositório.
