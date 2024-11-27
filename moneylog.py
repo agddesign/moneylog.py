@@ -7,8 +7,16 @@
 # COMERCIALIZAÇÃO ou ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO.
 # Consulte a Licença Pública Geral GNU para mais detalhes.
 #
-# Você deve ter recebido uma cópia da Licença Pública Geral GNU
-# junto com este programa. Se não, veja <http://www.gnu.org/licenses/>.
+# Veja <http://www.gnu.org/licenses/>.
+# 
+# Os fundamentos da GPL
+# 
+# Ninguém deve ser restrito pelo software que eles usam. Existem quatro liberdades que todos os usuários devem ter:
+# 
+# a liberdade de usar o software para qualquer finalidade,
+# a liberdade de mudar o software de acordo com suas necessidades,
+# a liberdade de compartilhar o software com seus amigos e vizinhos e
+# a liberdade de compartilhar as mudanças que você faz.
 
 import subprocess
 import sys
