@@ -1,3 +1,15 @@
+# Este programa é um software livre; você pode redistribuí-lo e/ou modificá-lo
+# sob os termos da Licença Pública Geral GNU, conforme publicada pela Free Software Foundation,
+# na versão 3 da Licença, ou (a seu critério) qualquer versão posterior.
+#
+# Este programa é distribuído na expectativa de que seja útil,
+# mas SEM NENHUMA GARANTIA; nem mesmo a garantia implícita de
+# COMERCIALIZAÇÃO ou ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO.
+# Consulte a Licença Pública Geral GNU para mais detalhes.
+#
+# Você deve ter recebido uma cópia da Licença Pública Geral GNU
+# junto com este programa. Se não, veja <http://www.gnu.org/licenses/>.
+
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
